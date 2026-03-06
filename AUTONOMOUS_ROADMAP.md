@@ -10,11 +10,11 @@
 
 | # | Task | Status | Commit |
 |---|------|--------|--------|
-| 1 | Date Difference Calculator | ⏳ | - |
-| 2 | Discount/Sale Calculator | ⏸️ | - |
-| 3 | QR Code Generator | ⏸️ | - |
+| 1 | Date Difference Calculator | ✅ | d84cfee |
+| 2 | Discount/Sale Calculator | ✅ | d84cfee |
+| 3 | QR Code Generator | ✅ | d84cfee |
 | 4 | "How Old Am I Really?" | ⏸️ | - |
-| 5 | Love/Compatibility Calculator | ⏸️ | - |
+| 5 | Love/Compatibility Calculator | ✅ | d84cfee |
 | 6 | Embed This Tool Feature | ⏸️ | - |
 | 7 | Shareable Results Pages | ⏸️ | - |
 | 8 | Word Counter + Age Calculator metadata | ⏸️ | - |
