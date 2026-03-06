@@ -1,65 +1,162 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { Calculator, DollarSign, Percent, Lock, ArrowRightLeft, Palette, FileText, Calendar } from 'lucide-react';
 
-export default function Home() {
+const tools = [
+  {
+    href: '/bmi-calculator',
+    title: 'BMI Calculator',
+    description: 'Calculate your Body Mass Index and see health categories',
+    icon: Calculator,
+    color: 'bg-emerald-100 text-emerald-600',
+  },
+  {
+    href: '/tip-calculator',
+    title: 'Tip Calculator',
+    description: 'Calculate tips and split bills between friends',
+    icon: DollarSign,
+    color: 'bg-blue-100 text-blue-600',
+  },
+  {
+    href: '/percentage',
+    title: 'Percentage Calculator',
+    description: 'Calculate percentages, increases, and decreases',
+    icon: Percent,
+    color: 'bg-purple-100 text-purple-600',
+  },
+  {
+    href: '/password-generator',
+    title: 'Password Generator',
+    description: 'Generate secure, random passwords instantly',
+    icon: Lock,
+    color: 'bg-rose-100 text-rose-600',
+  },
+  {
+    href: '/unit-converter',
+    title: 'Unit Converter',
+    description: 'Convert length, weight, and temperature units',
+    icon: ArrowRightLeft,
+    color: 'bg-amber-100 text-amber-600',
+  },
+  {
+    href: '/color-picker',
+    title: 'Color Picker',
+    description: 'Pick colors and convert between HEX, RGB, and HSL',
+    icon: Palette,
+    color: 'bg-pink-100 text-pink-600',
+  },
+  {
+    href: '/word-counter',
+    title: 'Word Counter',
+    description: 'Count words, characters, and sentences in text',
+    icon: FileText,
+    color: 'bg-cyan-100 text-cyan-600',
+  },
+  {
+    href: '/age-calculator',
+    title: 'Age Calculator',
+    description: 'Calculate your exact age in years, months, and days',
+    icon: Calendar,
+    color: 'bg-indigo-100 text-indigo-600',
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+      {/* Header */}
+      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-10">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="text-xl font-bold text-gray-900">
+            ⚡ QuickTools
+          </div>
+          <nav className="flex gap-4 text-sm">
+            <Link href="/about" className="text-gray-600 hover:text-gray-900">
+              About
+            </Link>
+            <Link href="/privacy" className="text-gray-600 hover:text-gray-900">
+              Privacy
+            </Link>
+          </nav>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="max-w-6xl mx-auto px-4 py-16 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Free Online Tools
+        </h1>
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          Fast, private, and easy-to-use calculators and utilities.
+          No sign-up required. Your data stays on your device.
+        </p>
+      </section>
+
+      {/* Tools Grid */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {tools.map((tool) => (
+            <Link
+              key={tool.href}
+              href={tool.href}
+              className="group bg-white rounded-xl shadow-sm hover:shadow-md p-6 transition-all hover:-translate-y-1"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              <div className={`w-12 h-12 rounded-lg ${tool.color} flex items-center justify-center mb-4`}>
+                <tool.icon className="w-6 h-6" />
+              </div>
+              <h2 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
+                {tool.title}
+              </h2>
+              <p className="text-sm text-gray-600">
+                {tool.description}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="bg-white border-t py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
+            Why Use QuickTools?
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div>
+              <div className="text-4xl mb-3">⚡</div>
+              <h3 className="font-semibold text-gray-900 mb-2">Lightning Fast</h3>
+              <p className="text-gray-600 text-sm">
+                All calculations happen instantly in your browser
+              </p>
+            </div>
+            <div>
+              <div className="text-4xl mb-3">🔒</div>
+              <h3 className="font-semibold text-gray-900 mb-2">100% Private</h3>
+              <p className="text-gray-600 text-sm">
+                Your data never leaves your device
+              </p>
+            </div>
+            <div>
+              <div className="text-4xl mb-3">📱</div>
+              <h3 className="font-semibold text-gray-900 mb-2">Mobile Friendly</h3>
+              <p className="text-gray-600 text-sm">
+                Works perfectly on any device
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t py-8">
+        <div className="max-w-6xl mx-auto px-4 text-center text-sm text-gray-500">
+          <p>⚡ QuickTools - Free online calculators and utilities</p>
+          <p className="mt-2">
+            <Link href="/privacy" className="hover:text-gray-700">Privacy Policy</Link>
+            {' • '}
+            <Link href="/about" className="hover:text-gray-700">About</Link>
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </footer>
     </div>
   );
 }
