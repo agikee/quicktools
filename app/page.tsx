@@ -1,6 +1,19 @@
 import Link from 'next/link';
 import { Calculator, DollarSign, Percent, Lock, ArrowRightLeft, Palette, FileText, Calendar } from 'lucide-react';
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'QuickTools',
+  description: 'Free online calculators and utilities',
+  url: 'https://quicktools-dusky.vercel.app',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://quicktools-dusky.vercel.app/?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+};
+
 const tools = [
   {
     href: '/bmi-calculator',
@@ -63,6 +76,11 @@ const tools = [
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">

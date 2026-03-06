@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://quicktools.app' // Update with actual domain
+  const baseUrl = 'https://quicktools-dusky.vercel.app' // Update with actual domain
 
   const tools = [
     '',

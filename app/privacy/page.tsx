@@ -84,10 +84,31 @@ export default function PrivacyPage() {
           </p>
         </section>
 
-        <section>
+        <section className="mb-8">
           <h2 className="text-xl font-semibold mb-3">8. Contact Us</h2>
           <p className="text-gray-700">
-            If you have any questions about this Privacy Policy, please contact us through our website.
+            If you have any questions about this Privacy Policy or our practices, please contact us at:
+          </p>
+          <ul className="list-none mt-3 text-gray-700">
+            <li><strong>Email:</strong> contact@quicktools.app</li>
+            <li><strong>Website:</strong> https://quicktools-dusky.vercel.app</li>
+          </ul>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">9. California Privacy Rights (CalOPPA)</h2>
+          <p className="text-gray-700">
+            California residents have the right to request information about our data collection practices.
+            We do not sell personal information as defined under California law.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">10. GDPR Compliance</h2>
+          <p className="text-gray-700">
+            For users in the European Economic Area (EEA), we comply with GDPR requirements.
+            Since all calculations are performed locally in your browser, we do not process
+            personal data on our servers.
           </p>
         </section>
       </div>
