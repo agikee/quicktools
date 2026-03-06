@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
   --font-size-base: 17px;
   --line-height-base: 1.65;
   --font-weight-normal: 425;
@@ -81,15 +81,24 @@ code, pre {
   line-height: 1.5;
 }
 
-/* Improve text-gray classes for better contrast */
-.text-gray-600 {
-  color: rgb(75 85 99) !important;
+/* Improve text-gray classes for better contrast - use near-black instead of gray */
+.text-gray-900, .text-gray-800, .text-gray-700, .text-gray-600 {
+  color: rgb(15 23 42) !important;
 }
 
 .text-gray-500 {
-  color: rgb(107 114 128) !important;
+  color: rgb(51 65 85) !important;
 }
 
 .text-gray-400 {
-  color: rgb(156 163 175) !important;
+  color: rgb(71 85 105) !important;
+}
+
+.text-gray-300 {
+  color: rgb(100 116 139) !important;
+}
+
+/* Make paragraph and body text black by default */
+p, li, td, th, span:not(.text-blue-600):not(.text-green-600):not(.text-red-600):not(.text-orange-600):not(.text-purple-600):not(.text-pink-600):not(.text-cyan-600):not(.text-emerald-600):not(.text-rose-600):not(.text-indigo-600):not(.text-amber-600) {
+  color: rgb(15 23 42);
 }
