@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Calculator, DollarSign, Percent, Lock, ArrowRightLeft, Palette, FileText, Calendar } from 'lucide-react';
+import { Calculator, DollarSign, Percent, Lock, ArrowRightLeft, Palette, FileText, Calendar, Tag, Clock, Heart, QrCode, TrendingUp, Zap } from 'lucide-react';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -37,6 +37,20 @@ const tools = [
     color: 'bg-purple-100 text-purple-600',
   },
   {
+    href: '/discount-calculator',
+    title: 'Discount Calculator',
+    description: 'Calculate sale prices and stacked discounts',
+    icon: Tag,
+    color: 'bg-red-100 text-red-600',
+  },
+  {
+    href: '/date-calculator',
+    title: 'Date Calculator',
+    description: 'Calculate days between dates',
+    icon: Clock,
+    color: 'bg-cyan-100 text-cyan-600',
+  },
+  {
     href: '/password-generator',
     title: 'Password Generator',
     description: 'Generate secure, random passwords instantly',
@@ -56,6 +70,34 @@ const tools = [
     description: 'Pick colors and convert between HEX, RGB, and HSL',
     icon: Palette,
     color: 'bg-pink-100 text-pink-600',
+  },
+  {
+    href: '/qr-code-generator',
+    title: 'QR Code Generator',
+    description: 'Create QR codes for URLs and text',
+    icon: QrCode,
+    color: 'bg-indigo-100 text-indigo-600',
+  },
+  {
+    href: '/love-calculator',
+    title: 'Love Calculator',
+    description: 'Fun compatibility calculator for names',
+    icon: Heart,
+    color: 'bg-pink-100 text-pink-600',
+  },
+  {
+    href: '/loan-calculator',
+    title: 'Loan Calculator',
+    description: 'Calculate monthly payments and interest',
+    icon: TrendingUp,
+    color: 'bg-green-100 text-green-600',
+  },
+  {
+    href: '/calorie-calculator',
+    title: 'Calorie Calculator',
+    description: 'Calculate daily calorie needs',
+    icon: Zap,
+    color: 'bg-orange-100 text-orange-600',
   },
   {
     href: '/word-counter',
