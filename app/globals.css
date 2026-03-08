@@ -2,18 +2,16 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #000000;
+  --foreground: #0f172a;
   --font-size-base: 17px;
   --line-height-base: 1.65;
   --font-weight-normal: 425;
   --font-weight-medium: 525;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #f5f5f5;
-  }
+/* Force light mode - no dark mode */
+* {
+  color-scheme: light;
 }
 
 * {
@@ -22,16 +20,34 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #ffffff !important;
+  color: #0f172a !important;
   font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   font-weight: var(--font-weight-normal);
 }
 
+/* Make all text dark/black */
+p, li, td, th, span, div, label, h1, h2, h3, h4, h5, h6 {
+  color: #0f172a;
+}
+
+/* Keep colored text as-is */
+.text-blue-600 { color: rgb(37 99 235) !important; }
+.text-green-600 { color: rgb(22 163 74) !important; }
+.text-red-600 { color: rgb(220 38 38) !important; }
+.text-orange-600 { color: rgb(234 88 12) !important; }
+.text-purple-600 { color: rgb(147 51 234) !important; }
+.text-pink-600 { color: rgb(219 39 119) !important; }
+.text-cyan-600 { color: rgb(8 145 178) !important; }
+.text-emerald-600 { color: rgb(5 150 105) !important; }
+.text-rose-600 { color: rgb(225 29 72) !important; }
+.text-indigo-600 { color: rgb(79 70 229) !important; }
+.text-amber-600 { color: rgb(217 119 6) !important; }
+
 /* Improve readability for all text elements */
-p, li, td, th, span, label, div {
+p, li, td, th {
   line-height: 1.6;
   letter-spacing: 0.005em;
 }
@@ -41,18 +57,21 @@ h1 {
   font-weight: 750;
   letter-spacing: -0.025em;
   line-height: 1.2;
+  color: #0f172a;
 }
 
 h2 {
   font-weight: 650;
   letter-spacing: -0.02em;
   line-height: 1.3;
+  color: #0f172a;
 }
 
 h3, h4, h5, h6 {
   font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.4;
+  color: #0f172a;
 }
 
 /* Ensure inputs are readable and don't zoom on mobile */
@@ -60,6 +79,8 @@ input, textarea, select {
   font-size: 17px;
   line-height: 1.5;
   font-weight: var(--font-weight-normal);
+  color: #0f172a;
+  background-color: #ffffff;
 }
 
 /* Better button readability */
@@ -68,9 +89,9 @@ button {
   letter-spacing: 0.01em;
 }
 
-/* Improve placeholder text contrast */
+/* Improve placeholder text - darker for visibility */
 ::placeholder {
-  color: #9ca3af;
+  color: #64748b;
   opacity: 1;
 }
 
@@ -81,24 +102,11 @@ code, pre {
   line-height: 1.5;
 }
 
-/* Improve text-gray classes for better contrast - use near-black instead of gray */
-.text-gray-900, .text-gray-800, .text-gray-700, .text-gray-600 {
-  color: rgb(15 23 42) !important;
-}
-
-.text-gray-500 {
-  color: rgb(51 65 85) !important;
-}
-
-.text-gray-400 {
-  color: rgb(71 85 105) !important;
-}
-
-.text-gray-300 {
-  color: rgb(100 116 139) !important;
-}
-
-/* Make paragraph and body text black by default */
-p, li, td, th, span:not(.text-blue-600):not(.text-green-600):not(.text-red-600):not(.text-orange-600):not(.text-purple-600):not(.text-pink-600):not(.text-cyan-600):not(.text-emerald-600):not(.text-rose-600):not(.text-indigo-600):not(.text-amber-600) {
-  color: rgb(15 23 42);
-}
+/* Override any gray text classes to be darker */
+.text-gray-900 { color: #0f172a !important; }
+.text-gray-800 { color: #1e293b !important; }
+.text-gray-700 { color: #334155 !important; }
+.text-gray-600 { color: #475569 !important; }
+.text-gray-500 { color: #64748b !important; }
+.text-gray-400 { color: #94a3b8 !important; }
+.text-gray-300 { color: #cbd5e1 !important; }
